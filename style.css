@@ -1,0 +1,51 @@
+.container {
+    width: 500px;
+    background-color:rgb(61, 186, 228);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#answerbuttons {
+    display: none;
+}
+
+h1.hidden {
+    display: none;
+}
+
+#timer { 
+    display: none;
+    background-color: lawngreen;
+    border-radius: 30%;
+    border: 2px solid yellow;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+button {
+    background-color: lemonchiffon;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 32px;
+    border: 2px solid orangered;
+    border-radius: 1rem;
+    cursor: pointer;
+    grid-column: inherit;
+    font-weight: bold;
+    font-size: 16px;
+}
+button:hover {
+    background-color:yellow;
+    color: black;
+}
+
+.hide {
+    display: none;
+}
