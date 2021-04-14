@@ -27,7 +27,7 @@ const questions = [
       answer: 'var birds=["pigeon", "parrot", "duck", "owl"]'
     }
  ]
-
+var sec = 30;
 startButton.addEventListener('click', commenceQuiz);
 var currentIndex = 0;
 // quiz functions
@@ -35,18 +35,18 @@ function commenceQuiz() {
     //hiding start button once quiz has started using CSS .hide display none
     startButton.classList.add('hide')
     topScores.classList.add('hide')
-    showAnswerButtons()
     showTimerButton()
+    showAnswerButtons()
     displayQuestion()
     //execute timer function goes here which gets invoked here
-    var sec = 15;
     var time = setInterval(myTimer, 1000);
     function myTimer() {
     document.getElementById('timer').innerHTML = sec;
     sec--;
-    if (sec == -1) {
-        clearInterval(time);
-        alert("TIME OUT!");
+    if (sec <= 0) {
+      clearInterval(time);
+      alert("GAME OVER!");
+      document.getElementById('timer').innerHTML = "0";
     }
 }
 }  
@@ -94,6 +94,7 @@ function validateAnswer(eventObject) {
     else {
         //if incorrect reduce time and go to next question
         console.log("incorrect")
+        sec = sec - 10;
     }
     //load next question
     currentIndex++;
@@ -102,6 +103,13 @@ function validateAnswer(eventObject) {
     }
     else {
         console.log("this is the end")
+        if (sec < 0) {
+          sec = 0
+        }
+        console.log(sec)
         //load score
+        document.getElementById("results").textContent = "Your score is " + sec
+
     }
 }
+
