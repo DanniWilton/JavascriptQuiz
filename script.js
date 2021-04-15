@@ -113,3 +113,7 @@ function validateAnswer(eventObject) {
     }
 }
 
+//local storage for storing the scores
+// localStorage.setItem("username", "Danni";)
+//console.log(localStorage.getItem("username"));
+// danni
